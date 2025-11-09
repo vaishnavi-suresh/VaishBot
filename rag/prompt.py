@@ -12,8 +12,6 @@ from dotenv import load_dotenv
 load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), "..", ".env"))
 model_name = "Qwen/Qwen3-30B-A3B"
 
-def _clip(s: str, n: int) -> str:
-    return s if len(s) <= n else s[: max(0, n - 1)].rstrip() + "…"
 
 
 def _shrink_context(ctx: str, max_chars: int = 12000) -> str:  # CHANGED
